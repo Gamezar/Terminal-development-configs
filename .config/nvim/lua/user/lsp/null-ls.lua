@@ -14,5 +14,6 @@ null_ls.setup {
   sources = {
     formatting.stylua,
     formatting.gofmt,
+    formatting.black,
   },
 }
