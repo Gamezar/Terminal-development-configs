@@ -55,9 +55,14 @@ keymap("v", ">", ">gv", opts)
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
+-- RST
+keymap("n", "<leader>rc", ":TableRstFormat<CR>", opts)
+keymap("n", "<leader>rf", ":TableRstReflow<CR>", opts)
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keymap('v', "<leader>ft", 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
@@ -81,4 +86,6 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-keymap("v", "<leader>lf", "<ESC><cmd>lua vim.lsp.buf.range_formatting()<CR>", {noremap = true})
+keymap("v", "<leader>lf", "<ESC><cmd>lua vim.lsp.buf.format()<CR>", {noremap = true})
+
+-- vim.api.nvim_command("!setxkbmap -option caps:escape")

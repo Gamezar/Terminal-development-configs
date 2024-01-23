@@ -1,6 +1,6 @@
 return {
     cmd = {
-        "clangd-15",
+        "clangd",
         "--all-scopes-completion",
         "--suggest-missing-includes",
         "--background-index",

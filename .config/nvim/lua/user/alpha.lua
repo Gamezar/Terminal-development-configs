@@ -16,6 +16,7 @@ function M.config()
     [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
   }
   dashboard.section.buttons.val = {
+    dashboard.button("s", " " .. " Restore session", ":SessionManager load_session<CR>"),
     dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
     dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
@@ -25,7 +26,7 @@ function M.config()
     dashboard.button("q", " " .. " Quit", ":qa<CR>"),
   }
   local function footer()
-    return "chrisatmachine.com"
+    return "Hello, George!"
   end
 
   dashboard.section.footer.val = footer()

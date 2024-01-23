@@ -8,6 +8,10 @@ local M = {
       "ahmedkhalf/project.nvim",
       commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
     },
+    {
+      "nvim-telescope/telescope-ui-select.nvim",
+      commit = "62ea5e58c7bbe191297b983a9e7e89420f581369",
+    },
   },
 }
 
@@ -29,5 +33,7 @@ M.opts = {
     },
   },
 }
+
+require("telescope").load_extension("ui-select")
 
 return M

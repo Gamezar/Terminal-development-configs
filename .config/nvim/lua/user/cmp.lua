@@ -46,6 +46,8 @@ function M.config()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
   require("luasnip/loaders/from_vscode").lazy_load()
+  require("luasnip/loaders/from_vscode").lazy_load{ paths = { "./snippets/ROS-Snippets" } }
+  require("luasnip/loaders/from_vscode").lazy_load{ paths = { "./snippets/rust" } }
 
   local check_backspace = function()
     local col = vim.fn.col "." - 1
