@@ -1,0 +1,39 @@
+#!/bin/zsh
+base_dir="$HOME/catkin_softballs"
+session_name="ros"
+env_setup="source /opt/ros/noetic/setup.zsh && source devel/setup.zsh"
+if [[ $# -gt 0 ]]; then
+	session_name=$1
+fi
+dir="src/rr_sootballs"
+if [[ $# -gt 1 ]]; then
+	dir=$2
+fi
+#tmux new-session -d $session_name
+tmux rename-session $session_name
+tmux rename-window "build"
+tmux new-window
+tmux rename-window "Code"
+tmux new-window
+tmux rename-window "git"
+tmux new-window
+tmux rename-window "simulation"
+tmux new-window
+tmux rename-window "docs-build"
+tmux new-window
+tmux rename-window "docker-simulation"
+tmux select-window -t 0
+tmux send-keys "cd $base_dir && $env_setup" C-m
+tmux select-window -t 3
+tmux send-keys "cd $base_dir && $env_setup" C-m
+tmux select-window -t 2
+tmux send-keys "cd $base_dir/$dir" C-m
+tmux send-keys "lazygit" C-m
+tmux select-window -t 1
+tmux send-keys "cd $base_dir && $env_setup && cd $dir" C-m
+tmux send-keys "nvim" C-m
+tmux select-window -t 4
+tmux send-keys "cd $base_dir && $env_setup && cd $dir/docs" C-m
+tmux send-keys "source .venv/bin/activate" C-m
+tmux select-window -t 5
+tmux send-keys "cd $base_dir && $env_setup && cd $dir" C-m
