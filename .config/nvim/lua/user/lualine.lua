@@ -7,6 +7,10 @@ local M = {
       "arkav/lualine-lsp-progress",
       lazy = true,
     },
+    {
+      "AndreM222/copilot-lualine",
+      lazy = true,
+    },
   },
 }
 
